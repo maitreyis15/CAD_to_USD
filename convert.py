@@ -24,7 +24,7 @@ output_folder.mkdir(parents=True, exist_ok=True)
 assemblies = sorted(
     file for file in input_folder.iterdir()
     if file.is_file()
-    and file.suffix.lower() == ".sldasm"
+    and file.suffix.lower() in {".sldasm", ".sldprt", ".step", ".stp"}
 )
 
 print(f"\nFound {len(assemblies)} SolidWorks assemblies.")
